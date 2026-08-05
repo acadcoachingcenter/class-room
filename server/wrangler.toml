@@ -1,0 +1,22 @@
+name = "acad-classroom-notify"
+main = "src/index.js"
+compatibility_date = "2026-08-01"
+
+# Runs the "starting soon" reminder sweep every 5 minutes.
+[triggers]
+crons = ["*/5 * * * *"]
+
+# Stores which event IDs have already been notified, to avoid duplicate
+# reminder emails across overlapping cron runs.
+# Create with: npx wrangler kv namespace create NOTIFIED_EVENTS
+[[kv_namespaces]]
+binding = "NOTIFIED_EVENTS"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+# Secrets (set via `npx wrangler secret put <NAME>`, never committed):
+#   GOOGLE_SERVICE_ACCOUNT_JSON  - full service account key JSON, as a string
+#   GOOGLE_IMPERSONATE_EMAIL     - Workspace mailbox to send/act as, e.g. no-reply@acadapp.in
+#
+# Plain vars (safe to commit, not secret):
+[vars]
+ACAD_CALENDAR_ID = "primary" # replace with your shared "ACAD Live Classes" calendar ID
