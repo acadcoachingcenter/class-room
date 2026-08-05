@@ -79,3 +79,28 @@ export function classStatus(classItem) {
   if (classItem.schedule.label.toLowerCase() === "today") return "live-soon";
   return "upcoming";
 }
+
+export async function createClass(classData) {
+  return mock.createClass(classData);
+}
+
+export async function updateClass(classId, updates) {
+  return mock.updateClass(classId, updates);
+}
+
+export async function deleteClass(classId) {
+  return mock.deleteClass(classId);
+}
+
+export async function addResource(classId, resource) {
+  return mock.addResource(classId, resource);
+}
+
+export async function deleteResource(classId, resourceId) {
+  return mock.deleteResource(classId, resourceId);
+}
+
+
+
+
+
