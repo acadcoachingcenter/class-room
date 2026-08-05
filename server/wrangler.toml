@@ -11,7 +11,7 @@ crons = ["*/5 * * * *"]
 # Create with: npx wrangler kv namespace create NOTIFIED_EVENTS
 [[kv_namespaces]]
 binding = "NOTIFIED_EVENTS"
-id = "REPLACE_WITH_KV_NAMESPACE_ID"
+id = "8f335dd0c7c440469dd523ecadddcfb3"
 
 # Secrets (set via `npx wrangler secret put <NAME>`, never committed):
 #   GOOGLE_SERVICE_ACCOUNT_JSON  - full service account key JSON, as a string
