@@ -39,7 +39,7 @@ export async function updateMeetUrl(classId, meetUrl) {
 export async function syncClassToCalendar(classItem, { tutorEmail, studentEmails = [] } = {}) {
   if (!NOTIFY_WORKER_URL) {
     // Mock fallback - no real Calendar/Gmail calls until the worker is deployed.
-    const meetUrl = classItem.meetUrl || "https://meet.google.com/demo-not-deployed";
+    const meetUrl = classItem.meetUrl || "https://meet.google.com/wsb-ztxe-kwc";
     const updated = await mock.updateMeetUrl(classItem.id, meetUrl);
     return {
       meetUrl,
